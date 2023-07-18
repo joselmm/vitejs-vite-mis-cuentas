@@ -69,6 +69,13 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
           class={expand ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}
         ></i>
         {platform.platformName}
+        {platform.fullAccount === '1' ? (
+          <span className="text-primey">
+            <i class="bi bi-check-square-fill"></i>
+          </span>
+        ) : (
+          <span className="text-primey">{platform.soldUsers}</span>
+        )}
       </div>
       <div
         className="col-3 text-center cursor-pointer text-truncate"
