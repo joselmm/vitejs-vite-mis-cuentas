@@ -66,12 +66,12 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
         style={{ cursor: 'default' }}
       >
         <i
-          class={expand ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}
+          className={expand ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}
         ></i>
         {platform.platformName}
         {platform.fullAccount === '1' ? (
           <span className="text-primey">
-            <i class="bi bi-check-square-fill"></i>
+            <i className="bi bi-check-square-fill"></i>
           </span>
         ) : (
           <span className="text-primey">{platform.soldUsers}</span>
@@ -126,8 +126,11 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
           {platform.paymentStatus === PAYMENT_STATUSES.PARTIALLY_PAID && (
             <div className="col-12">ABONADO: {platform.parcialPayment}</div>
           )}
-          <div className="col-12">Duracion: {platform.usageTime} dias</div>
-          <div className="col-12">Precio: {platform.price}</div>
+          <div className="col-12">
+            <i className="mr-1 bi bi-stopwatch-fill"></i>Duracion: {platform.usageTime}{' '}
+            dias
+          </div>
+          <div className="col-12"><i class="bi bi-coin"></i> Precio: {platform.price}</div>
           {platform.paymentStatus !== PAYMENT_STATUSES.PARTIALLY_PAID && (
             <div className="col-12">Pago con: {platform.paymentMethod}</div>
           )}
