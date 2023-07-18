@@ -87,7 +87,7 @@ export default function App() {
     <PlatformForm />
 */}
       </div>
-      <ClientList />
+      {/** <ClientList /> */}
       <PlatformList />
       {/**esto es el notificador (generalmente para mostarr avisos, como "se copio el texto al portapapeles") */}
       <ToastContainer />

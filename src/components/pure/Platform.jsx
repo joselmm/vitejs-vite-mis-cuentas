@@ -106,7 +106,7 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
           className="bi bi-trash"
         ></i>
       </div>
-      <div hidden={!expand} className="col-12 container row">
+      <div hidden={expand} className="col-12 container row">
         <div className="col-7  ml-2  mt-2">
           Info adicional:
           <div>{platform.additionalInfo}</div>
@@ -117,10 +117,10 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
             ): {parsedDate(platform.lastBillingDate)}
           </div>
           {platform.paymentStatus === PAYMENT_STATUSES.PARTIALLY_PAID ? (
-            <div className="col-6">ABONADO: {platform.parcialPayment}</div>
+            <div className="col-12">ABONADO: {platform.parcialPayment}</div>
           ) : null}
-          <div className="col-6">Duracion: {platform.usageTime} dias</div>
-          <div className="col-6">Precio: {platform.price}</div>
+          <div className="col-12">Duracion: {platform.usageTime} dias</div>
+          <div className="col-12">Precio: {platform.price}</div>
         </div>
       </div>
     </>
