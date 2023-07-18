@@ -42,11 +42,11 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
       return 'expired-more-than-oneday';
     }
     if (result >= -5) {
-      console.log(result)
+      console.log(result);
       return 'less-than-five-to-expire';
     }
-    
-    return ""
+
+    return '';
   };
 
   function parsedDate(ISOString) {
@@ -116,11 +116,14 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
             Ultima fecha de pago ({paymentStatusFlag(platform.paymentStatus)}
             ): {parsedDate(platform.lastBillingDate)}
           </div>
-          {platform.paymentStatus === PAYMENT_STATUSES.PARTIALLY_PAID ? (
+          {platform.paymentStatus === PAYMENT_STATUSES.PARTIALLY_PAID && (
             <div className="col-12">ABONADO: {platform.parcialPayment}</div>
-          ) : null}
+          )}
           <div className="col-12">Duracion: {platform.usageTime} dias</div>
           <div className="col-12">Precio: {platform.price}</div>
+          {platform.paymentStatus === PAYMENT_STATUSES.PAID && (
+            <div className="col-12">Pago con: {platform.paymentMethod}</div>
+          )}
         </div>
       </div>
     </>
