@@ -68,7 +68,7 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
         <i
           class={expand ? 'bi bi-caret-down-fill' : 'bi bi-caret-right-fill'}
         ></i>
-        {platform.platformName.replace('_', ' ')}
+        {platform.platformName}
       </div>
       <div
         className="col-3 text-center cursor-pointer text-truncate"
@@ -121,9 +121,12 @@ const Platform = ({ copyEmailOrPass, platform, remove }) => {
           )}
           <div className="col-12">Duracion: {platform.usageTime} dias</div>
           <div className="col-12">Precio: {platform.price}</div>
-          {platform.paymentStatus === PAYMENT_STATUSES.PAID && (
+          {platform.paymentStatus !== PAYMENT_STATUSES.PARTIALLY_PAID && (
             <div className="col-12">Pago con: {platform.paymentMethod}</div>
           )}
+          <div className="col-12">
+            Con credenciales: {platform.withCredentials === '1' ? 'SI' : 'NO'}
+          </div>
         </div>
       </div>
     </>
